@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --vc-blue: #4169E1;
+  --vc-dark-navy: #1A1F36;
+  --vc-white: #FFFFFF;
+  --vc-light-grey: #F0F2F5;
+  --vc-success: #22C55E;
+  --vc-warning: #F59E0B;
+  --vc-danger: #EF4444;
+}
+
+body {
+  background-color: var(--vc-light-grey);
+  color: var(--vc-dark-navy);
+}
