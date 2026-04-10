@@ -19,9 +19,9 @@ export default function RoleGuard({ allowedRoles }: RoleGuardProps) {
         // If logged in but wrong role, redirect to their proper default route
         switch (role) {
             case 'employee': return <Navigate to="/employee" replace />;
-            case 'orgAdmin': return <Navigate to="/org" replace />;
+            case 'orgAdmin': return <Navigate to="/org-admin" replace />;
             case 'ohAdmin': return <Navigate to="/oh-admin" replace />;
-            case 'platformAdmin': return <Navigate to="/platform" replace />;
+            case 'platformAdmin': return <Navigate to="/platform-admin" replace />;
             default: return <Navigate to="/login" replace />;
         }
     }

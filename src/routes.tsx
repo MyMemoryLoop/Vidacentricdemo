@@ -40,6 +40,7 @@ export const routes: RouteObject[] = [
         element: <RoleGuard allowedRoles={['orgAdmin']} />,
         children: [
             { index: true, element: <OrgAdminDashboard /> },
+            { path: '*', element: <Navigate to="/org-admin" replace /> }
         ],
     },
     {
@@ -47,6 +48,7 @@ export const routes: RouteObject[] = [
         element: <RoleGuard allowedRoles={['ohAdmin']} />,
         children: [
             { index: true, element: <OhAdminDashboard /> },
+            { path: '*', element: <Navigate to="/oh-admin" replace /> }
         ],
     },
     {
@@ -54,6 +56,7 @@ export const routes: RouteObject[] = [
         element: <RoleGuard allowedRoles={['platformAdmin']} />,
         children: [
             { index: true, element: <PlatformAdminDashboard /> },
+            { path: '*', element: <Navigate to="/platform-admin" replace /> }
         ],
     },
     { path: '*', element: <Navigate to="/" replace /> }

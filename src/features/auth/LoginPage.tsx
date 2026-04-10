@@ -22,9 +22,9 @@ export default function LoginPage() {
         login(roleSelection);
         switch (roleSelection) {
             case 'employee': navigate('/employee'); break;
-            case 'orgAdmin': navigate('/org'); break;
+            case 'orgAdmin': navigate('/org-admin'); break;
             case 'ohAdmin': navigate('/oh-admin'); break;
-            case 'platformAdmin': navigate('/platform'); break;
+            case 'platformAdmin': navigate('/platform-admin'); break;
         }
     };
 

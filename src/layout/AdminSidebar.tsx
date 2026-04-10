@@ -13,11 +13,11 @@ export default function AdminSidebar() {
         switch (role) {
             case 'orgAdmin':
                 return [
-                    { name: 'Dashboard', path: '/org' },
-                    { name: 'Employees', path: '/org/employees' },
-                    { name: 'Analytics', path: '/org/analytics' },
-                    { name: 'Reports', path: '/org/reports' },
-                    { name: 'Settings', path: '/org/settings' },
+                    { name: 'Dashboard', path: '/org-admin' },
+                    { name: 'Employees', path: '/org-admin/employees' },
+                    { name: 'Analytics', path: '/org-admin/analytics' },
+                    { name: 'Reports', path: '/org-admin/reports' },
+                    { name: 'Settings', path: '/org-admin/settings' },
                 ];
             case 'ohAdmin':
                 return [
@@ -29,13 +29,13 @@ export default function AdminSidebar() {
                 ];
             case 'platformAdmin':
                 return [
-                    { name: 'Dashboard', path: '/platform' },
-                    { name: 'Client Management', path: '/platform/clients' },
-                    { name: 'Partner Config', path: '/platform/partners' },
-                    { name: 'Subscription Plans', path: '/platform/plans' },
-                    { name: 'Platform Analytics', path: '/platform/analytics' },
-                    { name: 'System Logs', path: '/platform/logs' },
-                    { name: 'Settings', path: '/platform/settings' },
+                    { name: 'Dashboard', path: '/platform-admin' },
+                    { name: 'Client Management', path: '/platform-admin/clients' },
+                    { name: 'Partner Config', path: '/platform-admin/partners' },
+                    { name: 'Subscription Plans', path: '/platform-admin/plans' },
+                    { name: 'Platform Analytics', path: '/platform-admin/analytics' },
+                    { name: 'System Logs', path: '/platform-admin/logs' },
+                    { name: 'Settings', path: '/platform-admin/settings' },
                 ];
             default: return [];
         }
