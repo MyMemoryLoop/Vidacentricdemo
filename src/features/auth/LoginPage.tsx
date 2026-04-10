@@ -78,12 +78,11 @@ export default function LoginPage() {
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Password (Optional Demo)</label>
                         <input
                             type="password"
                             placeholder="••••••••"
                             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-vc-blue focus:border-vc-blue outline-none transition-colors"
-                            required
                         />
                     </div>
 
