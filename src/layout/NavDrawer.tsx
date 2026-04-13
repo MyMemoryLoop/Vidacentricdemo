@@ -83,6 +83,7 @@ export default function NavDrawer({ isOpen, onClose }: NavDrawerProps) {
                         <NavLink
                             key={link.path}
                             to={link.path}
+                            end
                             onClick={onClose}
                             className={({ isActive }) =>
                                 `block px-4 py-3 rounded-lg font-medium transition-colors ${isActive ? 'bg-vc-blue text-white' : 'text-vc-dark-navy hover:bg-vc-light-grey'

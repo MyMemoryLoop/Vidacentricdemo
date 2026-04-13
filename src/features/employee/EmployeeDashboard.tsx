@@ -10,11 +10,18 @@ export default function EmployeeDashboard() {
 
     const firstName = user?.name.split(' ')[0] || 'User';
 
+    const getGreeting = () => {
+        const hour = new Date().getHours();
+        if (hour < 12) return 'Good morning';
+        if (hour < 18) return 'Good afternoon';
+        return 'Good evening';
+    };
+
     return (
         <div className="space-y-6 animate-fade-in">
             <header>
-                <h1 className="text-2xl font-bold text-vc-dark-navy">Good morning, {firstName} 👋</h1>
-                <p className="text-gray-500 mt-1">Here is your daily health summary</p>
+                <h1 className="text-2xl font-bold text-vc-dark-navy">{getGreeting()}, {firstName}</h1>
+                <p className="text-gray-500 mt-1">Insurance ID Number 4585856958</p>
             </header>
 
             {/* VidaScore Section */}
