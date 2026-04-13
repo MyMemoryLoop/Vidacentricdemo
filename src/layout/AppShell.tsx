@@ -7,6 +7,8 @@ interface AppShellProps {
 }
 
 export default function AppShell({ children }: AppShellProps) {
+    const { role } = useAuthStore();
+
     return (
         <div className="flex min-h-screen bg-vc-light-grey text-vc-dark-navy flex-col lg:flex-row font-sans">
             {role && <AdminSidebar />}
