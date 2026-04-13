@@ -25,6 +25,10 @@ const OhSubscriptions = lazy(() => import('./features/ohAdmin/OhSubscriptions'))
 const OhServiceConfig = lazy(() => import('./features/ohAdmin/OhServiceConfig'));
 const OhSupport = lazy(() => import('./features/ohAdmin/OhSupport'));
 const PlatformAdminDashboard = lazy(() => import('./features/platformAdmin/PlatformAdminDashboard'));
+const PlatformTenants = lazy(() => import('./features/platformAdmin/PlatformTenants'));
+const PlatformLogs = lazy(() => import('./features/platformAdmin/PlatformLogs'));
+const PlatformApi = lazy(() => import('./features/platformAdmin/PlatformApi'));
+const PlatformSettings = lazy(() => import('./features/platformAdmin/PlatformSettings'));
 
 export const routes: RouteObject[] = [
     { path: '/', element: <Navigate to="/login" replace /> },
@@ -73,6 +77,10 @@ export const routes: RouteObject[] = [
         element: <RoleGuard allowedRoles={['platformAdmin']} />,
         children: [
             { index: true, element: <PlatformAdminDashboard /> },
+            { path: 'tenants', element: <PlatformTenants /> },
+            { path: 'logs', element: <PlatformLogs /> },
+            { path: 'api', element: <PlatformApi /> },
+            { path: 'settings', element: <PlatformSettings /> },
             { path: '*', element: <PlaceholderPage /> }
         ],
     },
