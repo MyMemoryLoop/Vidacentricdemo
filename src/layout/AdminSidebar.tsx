@@ -5,12 +5,20 @@ import { VidaCentricLogo } from '../components';
 export default function AdminSidebar() {
     const { role, user, logout } = useAuthStore();
 
-    // The Employee role is inherently mobile-first, and usually doesn't have a big desktop sidebar 
-    // but to prevent it snapping wildly we only render sidebars for admins according to the spec: "Desktop sidebar for admin roles"
-    if (role === 'employee' || !role) return null;
+    if (!role) return null;
 
     const getLinks = () => {
         switch (role) {
+            case 'employee':
+                return [
+                    { name: 'Dashboard', path: '/employee' },
+                    { name: 'Health Scan', path: '/employee/scan' },
+                    { name: 'My Reports', path: '/employee/report/latest' },
+                    { name: 'Services', path: '/employee/services' },
+                    { name: 'Telehealth', path: '/employee/telehealth' },
+                    { name: 'Health Profile', path: '/employee/profile' },
+                    { name: 'Notifications', path: '/employee/notifications' },
+                ];
             case 'orgAdmin':
                 return [
                     { name: 'Dashboard', path: '/org-admin' },
