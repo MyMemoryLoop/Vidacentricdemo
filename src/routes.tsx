@@ -15,6 +15,10 @@ const ServicesPage = lazy(() => import('./features/services/ServicesPage'));
 const HealthProfilePage = lazy(() => import('./features/profile/HealthProfilePage'));
 const NotificationsPage = lazy(() => import('./features/notifications/NotificationsPage'));
 const OrgAdminDashboard = lazy(() => import('./features/orgAdmin/OrgAdminDashboard'));
+const OrgEmployeesPage = lazy(() => import('./features/orgAdmin/OrgEmployeesPage'));
+const OrgAnalyticsPage = lazy(() => import('./features/orgAdmin/OrgAnalyticsPage'));
+const OrgReportsPage = lazy(() => import('./features/orgAdmin/OrgReportsPage'));
+const OrgSettingsPage = lazy(() => import('./features/orgAdmin/OrgSettingsPage'));
 const OhAdminDashboard = lazy(() => import('./features/ohAdmin/OhAdminDashboard'));
 const PlatformAdminDashboard = lazy(() => import('./features/platformAdmin/PlatformAdminDashboard'));
 
@@ -41,6 +45,10 @@ export const routes: RouteObject[] = [
         element: <RoleGuard allowedRoles={['orgAdmin']} />,
         children: [
             { index: true, element: <OrgAdminDashboard /> },
+            { path: 'employees', element: <OrgEmployeesPage /> },
+            { path: 'analytics', element: <OrgAnalyticsPage /> },
+            { path: 'reports', element: <OrgReportsPage /> },
+            { path: 'settings', element: <OrgSettingsPage /> },
             { path: '*', element: <PlaceholderPage /> }
         ],
     },
