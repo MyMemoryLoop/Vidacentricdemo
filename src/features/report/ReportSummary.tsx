@@ -18,8 +18,8 @@ export default function ReportSummary({ user, scan }: { user: User, scan: ScanRe
                     <div><span className="text-gray-400 block text-xs mb-0.5">Name</span><span className="font-medium text-vc-dark-navy">{user.name}</span></div>
                     <div><span className="text-gray-400 block text-xs mb-0.5">Age</span><span className="font-medium text-vc-dark-navy">{user.age || '--'}</span></div>
                     <div><span className="text-gray-400 block text-xs mb-0.5">Gender</span><span className="font-medium text-vc-dark-navy capitalize">{user.gender || '--'}</span></div>
-                    <div><span className="text-gray-400 block text-xs mb-0.5">Height</span><span className="font-medium text-vc-dark-navy">{user.height} cm</span></div>
-                    <div><span className="text-gray-400 block text-xs mb-0.5">Weight</span><span className="font-medium text-vc-dark-navy">{user.weight} kg</span></div>
+                    <div><span className="text-gray-400 block text-xs mb-0.5">Height</span><span className="font-medium text-vc-dark-navy">{user.height ?? '--'} cm</span></div>
+                    <div><span className="text-gray-400 block text-xs mb-0.5">Weight</span><span className="font-medium text-vc-dark-navy">{user.weight ?? '--'} kg</span></div>
                     <div><span className="text-gray-400 block text-xs mb-0.5">Smoking</span><span className="font-medium text-vc-dark-navy">{user.smoking ? 'Yes' : 'No'}</span></div>
                     <div><span className="text-gray-400 block text-xs mb-0.5">Diabetic</span><span className="font-medium text-vc-dark-navy">{user.diabetes ? 'Yes' : 'No'}</span></div>
                     <div><span className="text-gray-400 block text-xs mb-0.5">BP Meds</span><span className="font-medium text-vc-dark-navy">{user.bpMeds ? 'Yes' : 'No'}</span></div>

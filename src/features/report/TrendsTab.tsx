@@ -9,8 +9,8 @@ export default function TrendsTab({ history }: { history: ScanResult[] }) {
     const chartData = sortedHistory.map(scan => ({
         date: new Date(scan.date).toLocaleDateString(undefined, { month: 'short', day: 'numeric' }),
         score: scan.vidaScore,
-        hrv: scan.heartHealth.find(m => m.name === 'HRV')?.value || 0,
-        stress: scan.mindBody.find(m => m.name === 'Stress Index')?.value || 0
+        hrv: scan.heartHealth.find(m => m.name === 'Heart Rate Variability')?.value || 0,
+        stress: scan.mindBody.find(m => m.name === 'Stress Level')?.value || 0
     }));
 
     return (

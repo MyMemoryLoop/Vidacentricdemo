@@ -1,4 +1,5 @@
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
+import { Suspense } from 'react';
 import { useAuthStore } from '../store';
 import type { UserRole } from '../types';
 import AppShell from './AppShell';
@@ -28,7 +29,15 @@ export default function RoleGuard({ allowedRoles }: RoleGuardProps) {
 
     return (
         <AppShell>
-            <Outlet />
+            <Suspense fallback={
+                <div className="min-h-screen flex items-center justify-center bg-vc-light-grey">
+                    <div className="animate-pulse flex items-center gap-2 text-vc-blue">
+                        <div className="w-8 h-8 rounded-full bg-current opacity-20 transform scale-150"></div>
+                    </div>
+                </div>
+            }>
+                <Outlet />
+            </Suspense>
         </AppShell>
     );
 }

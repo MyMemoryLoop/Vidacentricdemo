@@ -17,7 +17,7 @@ export const useScanStore = create<ScanState>((set) => ({
     progress: 0,
     resultsReady: false,
     latestResult: null,
-    startScan: () => set({ isScanning: true, progress: 0, resultsReady: false }),
+    startScan: () => set({ isScanning: true, progress: 0, resultsReady: false, latestResult: null }),
     setProgress: (progress) => set({ progress }),
     completeScan: (result) => set({ isScanning: false, progress: 100, resultsReady: true, latestResult: result }),
     resetScan: () => set({ isScanning: false, progress: 0, resultsReady: false, latestResult: null }),

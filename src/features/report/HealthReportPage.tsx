@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Navigate, Link } from 'react-router-dom';
+import { Navigate, Link, useParams } from 'react-router-dom';
 import { useAuthStore } from '../../store';
-import { getLatestScanForUser, getHistoryForUser } from '@/data';
+import { getLatestScanForUser, getHistoryForUser } from '../../data';
 import ReportSummary from './ReportSummary';
 import HeartHealthTab from './HeartHealthTab';
 import MindBodyTab from './MindBodyTab';
@@ -12,9 +12,12 @@ type Tab = 'Summary' | 'Heart Health' | 'Mind & Body' | 'Trends' | 'Recommendati
 
 export default function HealthReportPage() {
     const { user } = useAuthStore();
+    const { id } = useParams<{ id: string }>();
     const [activeTab, setActiveTab] = useState<Tab>('Summary');
-    const scan = user ? getLatestScanForUser(user.id) : null;
     const history = user ? getHistoryForUser(user.id) : [];
+    const scan = id === 'latest'
+        ? (user ? getLatestScanForUser(user.id) : null)
+        : history.find(s => s.id === id) || (user ? getLatestScanForUser(user.id) : null);
 
     if (!user || !scan) {
         return <Navigate to="/employee" replace />;

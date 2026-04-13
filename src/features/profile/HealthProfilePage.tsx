@@ -33,8 +33,8 @@ export default function HealthProfilePage() {
                     <div className="space-y-4 text-sm mt-4">
                         <div className="flex justify-between items-center"><span className="text-gray-500">Age</span><span className="font-medium text-vc-dark-navy">{user.age || '--'} years</span></div>
                         <div className="flex justify-between items-center"><span className="text-gray-500">Gender</span><span className="font-medium text-vc-dark-navy capitalize">{user.gender || '--'}</span></div>
-                        <div className="flex justify-between items-center"><span className="text-gray-500">Height</span><span className="font-medium text-vc-dark-navy">{user.height} cm</span></div>
-                        <div className="flex justify-between items-center"><span className="text-gray-500">Weight</span><span className="font-medium text-vc-dark-navy">{user.weight} kg</span></div>
+                        <div className="flex justify-between items-center"><span className="text-gray-500">Height</span><span className="font-medium text-vc-dark-navy">{user.height ?? '--'} cm</span></div>
+                        <div className="flex justify-between items-center"><span className="text-gray-500">Weight</span><span className="font-medium text-vc-dark-navy">{user.weight ?? '--'} kg</span></div>
                     </div>
                 </div>
 

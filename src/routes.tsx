@@ -1,4 +1,4 @@
-import { lazy } from 'react';
+import { lazy, Suspense } from 'react';
 import type { RouteObject } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 import RoleGuard from './layout/RoleGuard';
@@ -20,7 +20,7 @@ const PlatformAdminDashboard = lazy(() => import('./features/platformAdmin/Platf
 
 export const routes: RouteObject[] = [
     { path: '/', element: <Navigate to="/login" replace /> },
-    { path: '/login', element: <LoginPage /> },
+    { path: '/login', element: <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="w-8 h-8 rounded-full bg-vc-blue opacity-20 animate-pulse"></div></div>}><LoginPage /></Suspense> },
     {
         path: '/employee',
         element: <RoleGuard allowedRoles={['employee']} />,

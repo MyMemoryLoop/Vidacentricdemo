@@ -20,7 +20,7 @@ export const useAuthStore = create<AuthState>()(
             login: (role) => {
                 const user = DEMO_USERS.find(u => u.role === role) || null;
                 if (!user) console.warn(`Auth: No user found for role: ${role}`);
-                set({ user, role });
+                set({ user, role, isAuthenticated: true });
             },
             logout: () => set({ user: null, role: null, isAuthenticated: false }),
         }),

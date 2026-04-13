@@ -21,12 +21,18 @@ export const StatCard = ({ title, value, trend, icon, colorClass = 'text-vc-blue
                 <span className={`text-2xl font-bold ${colorClass}`}>{value}</span>
                 {trend && (
                     <div className="flex items-center gap-1">
-                        <span className={`text-xs font-medium px-1.5 py-0.5 rounded-md ${trend.value > 0
+                        {trend.value === 0 ? (
+                            <span className="text-xs font-medium px-1.5 py-0.5 rounded-md bg-gray-50 text-gray-500">
+                                — {trend.label || 'No change'}
+                            </span>
+                        ) : (
+                            <span className={`text-xs font-medium px-1.5 py-0.5 rounded-md ${trend.value > 0
                                 ? (trend.isPositiveGood !== false ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700')
                                 : (trend.isPositiveGood !== false ? 'bg-red-50 text-red-700' : 'bg-green-50 text-green-700')
-                            }`}>
-                            {trend.value > 0 ? '↑' : '↓'} {Math.abs(trend.value)}{trend.label || '%'}
-                        </span>
+                                }`}>
+                                {trend.value > 0 ? '↑' : '↓'} {Math.abs(trend.value)}{trend.label || '%'}
+                            </span>
+                        )}
                     </div>
                 )}
             </div>
