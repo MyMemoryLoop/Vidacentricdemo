@@ -37,13 +37,11 @@ export default function AdminSidebar() {
                 ];
             case 'platformAdmin':
                 return [
-                    { name: 'Dashboard', path: '/platform-admin' },
-                    { name: 'Client Management', path: '/platform-admin/clients' },
-                    { name: 'Partner Config', path: '/platform-admin/partners' },
-                    { name: 'Subscription Plans', path: '/platform-admin/plans' },
-                    { name: 'Platform Analytics', path: '/platform-admin/analytics' },
+                    { name: 'Platform Overview', path: '/platform-admin' },
+                    { name: 'Root Tenants', path: '/platform-admin/tenants' },
+                    { name: 'API Diagnostics', path: '/platform-admin/api' },
                     { name: 'System Logs', path: '/platform-admin/logs' },
-                    { name: 'Settings', path: '/platform-admin/settings' },
+                    { name: 'Infrastructure', path: '/platform-admin/settings' },
                 ];
             default: return [];
         }
